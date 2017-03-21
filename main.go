@@ -72,7 +72,7 @@ func parseMessage(input Strings)Strings{
 		resultString="你好,迷途的羔羊"
 	}
 	else if(Strings.Contains(input,"你好")){
-		
+		resultString="亂數產生預備區"
 	}
 	else{ 	//in group behave guite
 		resultString=""
