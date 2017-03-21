@@ -23,7 +23,7 @@ import (
 )
 
 var bot *linebot.Client
-gradeschoolreply := [5]Strings{
+var gradeschoolreply := [5]Strings{
   "中2發言1",
   "中2發言2",
   "中2發言3",
