@@ -70,11 +70,9 @@ func parseMessage(input Strings)Strings{
 	resultString:=""
 	if(Strings.Contains(input,"你好")) {
 		resultString="你好,迷途的羔羊"
-	}
-	else if(Strings.Contains(input,"你好")){
-		resultString="亂數產生預備區"
-	}
-	else{ 	//in group behave guite
+	}else if(Strings.Contains(input,"存在X")||Strings.Contains(input,"存在x")){
+		resultString="中2發言預計區"
+	}else{ 	//in group behave guite
 		resultString=""
 	}
 	return resultString
