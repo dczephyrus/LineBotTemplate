@@ -23,17 +23,18 @@ import (
 )
 
 var bot *linebot.Client
-var gradeschoolreply = [5]strings{
+var gradeschoolreply = [5]strings
+func main() {
+	var err error
+	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
+	log.Println("Bot:", bot, " err:", err)
+	gradeschoolreply ={
   "中2發言1",
   "中2發言2",
   "中2發言3",
   "中2發言4",
   "中2發言5",
 }
-func main() {
-	var err error
-	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
-	log.Println("Bot:", bot, " err:", err)
 	http.HandleFunc("/callback", callbackHandler)
 	port := os.Getenv("PORT")
 	addr := fmt.Sprintf(":%s", port)
