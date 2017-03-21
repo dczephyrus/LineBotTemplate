@@ -23,7 +23,13 @@ import (
 )
 
 var bot *linebot.Client
-
+gradeschoolreply := [5]Strings{
+  "中2發言1",
+  "中2發言2",
+  "中2發言3",
+  "中2發言4",
+  "中2發言5",
+}
 func main() {
 	var err error
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
@@ -51,20 +57,25 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
 				replyMessage := parseMessage(message.Text)
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(replyMessage+" !")).Do(); err != nil {
+				if(replyMessage!=""){					
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(replyMessage+" !")).Do(); err != nil {
 					log.Print(err)
+					}
 				}
 			}
 		}
 	}
 }
-func parseMessage(input string)string{
+func parseMessage(input Strings)Strings{
 	resultString:=""
-	if(strings.Contains(input,"你好")) {
+	if(Strings.Contains(input,"你好")) {
 		resultString="你好,迷途的羔羊"
 	}
-	else{
-		resultString="今天天氣好啊"
+	else if(Strings.Contains(input,"你好")){
+		
+	}
+	else{ 	//in group behave guite
+		resultString=""
 	}
 	return resultString
 }
