@@ -23,7 +23,7 @@ import (
 )
 
 var bot *linebot.Client
-var gradeschoolreply = [5]strings
+var gradeschoolreply = [5]string
 func main() {
 	var err error
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
@@ -67,7 +67,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
-func parseMessage(input strings)strings{
+func parseMessage(input string)string{
 	resultString:=""
 	if(strings.Contains(input,"你好")) {
 		resultString="你好,迷途的羔羊"
