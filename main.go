@@ -28,7 +28,7 @@ func main() {
 	var err error
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
 	log.Println("Bot:", bot, " err:", err)
-	gradeschoolreply ={
+	gradeschoolreply= [...]string{
   "中2發言1",
   "中2發言2",
   "中2發言3",
