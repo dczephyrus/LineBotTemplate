@@ -63,5 +63,8 @@ func parseMessage(input string)string{
 	if(strings.Contains(input,"你好")) {
 		resultString="你好,迷途的羔羊"
 	}
+	else{
+		resultString="今天天氣好啊"
+	}
 	return resultString
 }
