@@ -23,7 +23,7 @@ import (
 )
 
 var bot *linebot.Client
-var gradeschoolreply = [5]string
+var gradeschoolreply  [5]string
 func main() {
 	var err error
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
