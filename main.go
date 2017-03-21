@@ -49,10 +49,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" OK!")).Do(); err != nil {
+				replyMessage := parseMessage(message.Text)
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(replyMessage+" !")).Do(); err != nil {
 					log.Print(err)
 				}
 			}
 		}
+	}
+}
+func parseMessage(input string)string{
+	if(string.contain(input,"你好")) {
+		return "你好,迷途的羔羊"
 	}
 }
