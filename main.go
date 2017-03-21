@@ -59,7 +59,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func parseMessage(input string)string{
-	if(string.Contains(input,"你好")) {
+	if(strings.Contains(input,"你好")) {
 		return "你好,迷途的羔羊"
 	}
 }
