@@ -17,13 +17,13 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"Strings"
+	"strings"
 	
 	"github.com/line/line-bot-sdk-go/linebot"
 )
 
 var bot *linebot.Client
-var gradeschoolreply = [5]Strings{
+var gradeschoolreply = [5]strings{
   "中2發言1",
   "中2發言2",
   "中2發言3",
@@ -66,11 +66,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
-func parseMessage(input Strings)Strings{
+func parseMessage(input strings)strings{
 	resultString:=""
-	if(Strings.Contains(input,"你好")) {
+	if(strings.Contains(input,"你好")) {
 		resultString="你好,迷途的羔羊"
-	}else if(Strings.Contains(input,"存在X")||Strings.Contains(input,"存在x")){
+	}else if(strings.Contains(input,"存在X")||strings.Contains(input,"存在x")){
 		resultString="中2發言預計區"
 	}else{ 	//in group behave guite
 		resultString=""
