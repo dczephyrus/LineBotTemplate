@@ -17,7 +17,8 @@ import (
 	"log"
 	"net/http"
 	"os"
-
+	"strings"
+	
 	"github.com/line/line-bot-sdk-go/linebot"
 )
 
@@ -58,7 +59,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func parseMessage(input string)string{
-	if(string.contain(input,"你好")) {
+	if(string.Contains(input,"你好")) {
 		return "你好,迷途的羔羊"
 	}
 }
